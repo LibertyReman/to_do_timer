@@ -71,16 +71,19 @@ namespace to_do_timer
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //選択された行のタスク名と日付を取得
-            DataGridView data_grid_view = (DataGridView)this.Controls.Find(((DataGridView)sender).Name, false)[0];
-            string task_name = data_grid_view[1, e.RowIndex].Value.ToString();
-            string full_date = data_grid_view[2, e.RowIndex].Value.ToString();
+            //ヘッダー以外のセルがダブルクリックされた場合
+            if (e.RowIndex != -1) {
+                //選択された行のタスク名と日付を取得
+                DataGridView data_grid_view = (DataGridView)this.Controls.Find(((DataGridView)sender).Name, false)[0];
+                string task_name = data_grid_view[1, e.RowIndex].Value.ToString();
+                string full_date = data_grid_view[2, e.RowIndex].Value.ToString();
 
-            //登録フォームを表示
-            var f = new RegisterForm(task_name, full_date);
-            f.ShowDialog();
-            //データグリッドビューをリロード
-            this.OnLoad(e);
+                //登録フォームを表示
+                var f = new RegisterForm(task_name, full_date);
+                f.ShowDialog();
+                //データグリッドビューをリロード
+                this.OnLoad(e);
+            }
         }
     }
 }
