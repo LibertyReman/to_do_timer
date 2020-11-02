@@ -16,5 +16,23 @@ namespace to_do_timer
         {
             InitializeComponent();
         }
+
+        private void RegisterForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            using (var sw = new System.IO.StreamWriter("task.csv", true, Encoding.GetEncoding("shift_jis")))
+            {
+                sw.Write(textBox1.Text.Trim() + ",");
+                sw.Write(monthCalendar1.SelectionStart.ToShortDateString());
+                sw.WriteLine("");
+            }
+
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //カンマの入力を禁止する
+            if (e.KeyChar == ',')
+                e.Handled = true;
+        }
     }
 }
