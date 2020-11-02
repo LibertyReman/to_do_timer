@@ -40,15 +40,26 @@ namespace to_do_timer
             //ファイル読み込み
             string[] read_lines = System.IO.File.ReadAllLines("task.csv", Encoding.GetEncoding("shift_jis"));
 
+
             //タスク表示
             int count = 1;
-            foreach(string line in read_lines)
+            DateTime today = DateTime.Today;
+            foreach (string line in read_lines)
             {
                 string[] row = line.Split(',');
-                if(row[0] != "")
-                    dataGridView1.Rows.Add(count, row[0], row[1].Remove(0,5), "999");
-                count++;
+
+                if (row[0] != "")
+                {
+                    DateTime due_date = DateTime.Parse(row[1]);
+                    double limit = (due_date - today).TotalDays;
+                    dataGridView1.Rows.Add(count, row[0], row[1].Remove(0, 5), limit);
+                    count++;
+                }
             }
+
+            //limit列でデータ並び替え
+            dataGridView1.Sort(dataGridView1.Columns[3], ListSortDirection.Ascending);
+
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
