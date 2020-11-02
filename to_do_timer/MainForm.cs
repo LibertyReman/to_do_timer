@@ -37,10 +37,18 @@ namespace to_do_timer
             // データグリッドビューの行を初期化 ※リロード用
             dataGridView1.Rows.Clear();
 
+            //ファイル読み込み
+            string[] read_lines = System.IO.File.ReadAllLines("task.csv", Encoding.GetEncoding("shift_jis"));
 
             //タスク表示
-            for (int count = 1; count <= 10; count++)
-                dataGridView1.Rows.Add(count, "脅威分析修正", "12/27", "999");
+            int count = 1;
+            foreach(string line in read_lines)
+            {
+                string[] row = line.Split(',');
+                if(row[0] != "")
+                    dataGridView1.Rows.Add(count, row[0], row[1].Remove(0,5), "999");
+                count++;
+            }
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
