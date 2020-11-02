@@ -32,12 +32,22 @@ namespace to_do_timer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //前回フォームを閉じたときの座標にフォームを表示
+            this.Location = Properties.Settings.Default.StartFormPosition;
             // データグリッドビューの行を初期化 ※リロード用
             dataGridView1.Rows.Clear();
+
 
             //新規追加方法がセルクリックのためグリッドビューを10行表示する。
             for (int count = 1; count <= 10; count++)
                 dataGridView1.Rows.Add(count, "脅威分析修正", "12/27", "999");
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //フォームの座標を保存
+            Properties.Settings.Default.StartFormPosition = this.Location;
+            Properties.Settings.Default.Save();
         }
     }
 }
