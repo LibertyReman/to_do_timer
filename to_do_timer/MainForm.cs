@@ -38,7 +38,7 @@ namespace to_do_timer
             dataGridView1.Rows.Clear();
 
 
-            //新規追加方法がセルクリックのためグリッドビューを10行表示する。
+            //タスク表示
             for (int count = 1; count <= 10; count++)
                 dataGridView1.Rows.Add(count, "脅威分析修正", "12/27", "999");
         }
@@ -48,6 +48,12 @@ namespace to_do_timer
             //フォームの座標を保存
             Properties.Settings.Default.StartFormPosition = this.Location;
             Properties.Settings.Default.Save();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var f = new RegisterForm();
+            f.ShowDialog();
         }
     }
 }
