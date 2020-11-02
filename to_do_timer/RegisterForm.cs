@@ -19,13 +19,16 @@ namespace to_do_timer
 
         private void RegisterForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            using (var sw = new System.IO.StreamWriter("task.csv", true, Encoding.GetEncoding("shift_jis")))
+            //タスク名が空じゃない場合はファイルに書き込む
+            if (textBox1.Text.Trim().Length > 0)
             {
-                sw.Write(textBox1.Text.Trim() + ",");
-                sw.Write(monthCalendar1.SelectionStart.ToShortDateString());
-                sw.WriteLine("");
+                using (var sw = new System.IO.StreamWriter("task.csv", true, Encoding.GetEncoding("shift_jis")))
+                {
+                    sw.Write(textBox1.Text.Trim() + ",");
+                    sw.Write(monthCalendar1.SelectionStart.ToShortDateString());
+                    sw.WriteLine("");
+                }
             }
-
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)

@@ -73,6 +73,8 @@ namespace to_do_timer
         {
             var f = new RegisterForm();
             f.ShowDialog();
+            //データグリッドビューをリロード
+            this.OnLoad(e);
         }
     }
 }
