@@ -32,10 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Limit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TaskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TaskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Limit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,24 +72,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(275, 148);
             this.dataGridView1.TabIndex = 0;
             // 
-            // Limit
-            // 
-            this.Limit.HeaderText = "Limit";
-            this.Limit.Name = "Limit";
-            this.Limit.Width = 40;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.Width = 50;
-            // 
-            // TaskName
-            // 
-            this.TaskName.HeaderText = "Task Name";
-            this.TaskName.Name = "TaskName";
-            this.TaskName.Width = 142;
-            // 
             // Number
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -98,11 +80,29 @@
             this.Number.Name = "Number";
             this.Number.Width = 30;
             // 
+            // TaskName
+            // 
+            this.TaskName.HeaderText = "Task Name";
+            this.TaskName.Name = "TaskName";
+            this.TaskName.Width = 142;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.Width = 50;
+            // 
+            // Limit
+            // 
+            this.Limit.HeaderText = "Limit";
+            this.Limit.Name = "Limit";
+            this.Limit.Width = 40;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 145);
+            this.ClientSize = new System.Drawing.Size(271, 141);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
