@@ -37,7 +37,7 @@ namespace to_do_timer
 
             //新規追加方法がセルクリックのためグリッドビューを10行表示する。
             for (int count = 1; count <= 10; count++)
-                dataGridView1.Rows.Add(count, "脅威分析修正", "10/7", "50");
+                dataGridView1.Rows.Add(count, "脅威分析修正", "12/27", "999");
         }
     }
 }
