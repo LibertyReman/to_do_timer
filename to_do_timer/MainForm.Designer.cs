@@ -35,6 +35,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TaskName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Limit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -55,6 +56,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Number,
             this.TaskName,
+            this.FullDate,
             this.Date,
             this.Limit});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -87,6 +89,12 @@
             this.TaskName.HeaderText = "Task Name";
             this.TaskName.Name = "TaskName";
             this.TaskName.Width = 142;
+            // 
+            // FullDate
+            // 
+            this.FullDate.HeaderText = "FullDate";
+            this.FullDate.Name = "FullDate";
+            this.FullDate.Visible = false;
             // 
             // Date
             // 
@@ -125,6 +133,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn TaskName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Limit;
     }

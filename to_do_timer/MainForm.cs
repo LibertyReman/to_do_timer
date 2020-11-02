@@ -51,12 +51,12 @@ namespace to_do_timer
                 {
                     DateTime due_date = DateTime.Parse(row[1]);
                     double limit = (due_date - today).TotalDays;
-                    dataGridView1.Rows.Add("", row[0], row[1].Remove(0, 5), limit);
+                    dataGridView1.Rows.Add("", row[0], row[1], row[1].Remove(0, 5), limit);
                 }
             }
 
             //limit列でデータ並び替え
-            dataGridView1.Sort(dataGridView1.Columns[3], ListSortDirection.Ascending);
+            dataGridView1.Sort(dataGridView1.Columns[4], ListSortDirection.Ascending);
             for (int count = 0; count < dataGridView1.Rows.Count; count++)
                 dataGridView1.Rows[count].Cells[0].Value = count + 1;
 
@@ -71,7 +71,13 @@ namespace to_do_timer
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var f = new RegisterForm();
+            //選択された行のタスク名と日付を取得
+            DataGridView data_grid_view = (DataGridView)this.Controls.Find(((DataGridView)sender).Name, false)[0];
+            string task_name = data_grid_view[1, e.RowIndex].Value.ToString();
+            string full_date = data_grid_view[2, e.RowIndex].Value.ToString();
+
+            //登録フォームを表示
+            var f = new RegisterForm(task_name, full_date);
             f.ShowDialog();
             //データグリッドビューをリロード
             this.OnLoad(e);

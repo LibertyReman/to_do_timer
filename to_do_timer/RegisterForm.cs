@@ -12,9 +12,16 @@ namespace to_do_timer
 {
     public partial class RegisterForm : Form
     {
-        public RegisterForm()
+        public RegisterForm(string task_name, string date)
         {
             InitializeComponent();
+
+            //タスク編集
+            if(task_name.Trim().Length > 0)
+            {
+                textBox1.Text = task_name;
+                monthCalendar1.SetDate(DateTime.Parse(date));
+            }
         }
 
         private void RegisterForm_FormClosing(object sender, FormClosingEventArgs e)
