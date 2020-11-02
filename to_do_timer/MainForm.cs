@@ -42,7 +42,6 @@ namespace to_do_timer
 
 
             //タスク表示
-            int count = 1;
             DateTime today = DateTime.Today;
             foreach (string line in read_lines)
             {
@@ -52,13 +51,14 @@ namespace to_do_timer
                 {
                     DateTime due_date = DateTime.Parse(row[1]);
                     double limit = (due_date - today).TotalDays;
-                    dataGridView1.Rows.Add(count, row[0], row[1].Remove(0, 5), limit);
-                    count++;
+                    dataGridView1.Rows.Add("", row[0], row[1].Remove(0, 5), limit);
                 }
             }
 
             //limit列でデータ並び替え
             dataGridView1.Sort(dataGridView1.Columns[3], ListSortDirection.Ascending);
+            for (int count = 0; count < dataGridView1.Rows.Count; count++)
+                dataGridView1.Rows[count].Cells[0].Value = count + 1;
 
         }
 
