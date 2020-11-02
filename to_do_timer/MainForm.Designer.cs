@@ -72,7 +72,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(275, 148);
+            this.dataGridView1.Size = new System.Drawing.Size(278, 148);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -82,12 +82,14 @@
             this.Number.DefaultCellStyle = dataGridViewCellStyle2;
             this.Number.HeaderText = "No.";
             this.Number.Name = "Number";
+            this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Number.Width = 30;
             // 
             // TaskName
             // 
             this.TaskName.HeaderText = "Task Name";
             this.TaskName.Name = "TaskName";
+            this.TaskName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.TaskName.Width = 142;
             // 
             // FullDate
@@ -102,6 +104,7 @@
             this.Date.DefaultCellStyle = dataGridViewCellStyle3;
             this.Date.HeaderText = "Date";
             this.Date.Name = "Date";
+            this.Date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Date.Width = 50;
             // 
             // Limit
@@ -114,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 141);
+            this.ClientSize = new System.Drawing.Size(274, 141);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
