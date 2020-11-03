@@ -39,6 +39,9 @@ namespace to_do_timer
                 //テキストボックスとカレンダーに値を代入
                 textBox1.Text = task_name;
                 monthCalendar1.SetDate(DateTime.Parse(date));
+
+                //カーソル位置を行末へ
+                textBox1.Select(textBox1.Text.Length, 0);
             }
 
         }

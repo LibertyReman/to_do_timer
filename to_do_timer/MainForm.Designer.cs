@@ -111,6 +111,7 @@
             // 
             this.Limit.HeaderText = "Limit";
             this.Limit.Name = "Limit";
+            this.Limit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Limit.Width = 40;
             // 
             // MainForm

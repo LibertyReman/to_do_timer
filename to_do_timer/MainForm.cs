@@ -51,18 +51,24 @@ namespace to_do_timer
                     DateTime due_date = DateTime.Parse(row[1]);
                     double limit = (due_date - today).TotalDays;
                     dataGridView1.Rows.Add("", row[0], row[1], row[1].Remove(0, 5), limit);
+                    if (5 < limit && limit < 15)
+                        dataGridView1[4, dataGridView1.Rows.Count -1].Style.BackColor = Color.Yellow;
+                    else if (0 < limit && limit < 6)
+                        dataGridView1[4, dataGridView1.Rows.Count -1].Style.BackColor = Color.Red;
+                    else if (limit < 1)
+                        dataGridView1.Rows[dataGridView1.Rows.Count -1].DefaultCellStyle.BackColor = Color.LightGray;
                 }
             }
 
             //limit列でデータ並び替え
             dataGridView1.Sort(dataGridView1.Columns[4], ListSortDirection.Ascending);
+            //タスク個数分No.列を追加
             for (int count = 0; count < dataGridView1.Rows.Count; count++)
                 dataGridView1.Rows[count].Cells[0].Value = count + 1;
 
             //タスクは最大10個まで登録できるようにする
             for (int count = dataGridView1.Rows.Count + 1; count <= 10; count++)
                 dataGridView1.Rows.Add(count, "", "", "");
-
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
