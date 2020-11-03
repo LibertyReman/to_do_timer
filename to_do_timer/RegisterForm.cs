@@ -16,8 +16,21 @@ namespace to_do_timer
         {
             InitializeComponent();
 
-            //タスク編集
-            if(task_name.Trim().Length > 0)
+            //ファイル読み込み
+            string[] read_lines = System.IO.File.ReadAllLines("task.csv", Encoding.GetEncoding("shift_jis"));
+
+            //選択されたタスクを削除
+            int i = 0;
+            foreach (string line in read_lines)
+            {
+                if (line.Contains(task_name))
+                    read_lines = read_lines.Where((source, index) => index != i).ToArray();
+                i++;
+            }
+            System.IO.File.WriteAllLines("task.csv",read_lines, Encoding.GetEncoding("shift_jis"));
+
+            //タスク編集の場合はテキストボックスとカレンダーに値を代入
+            if (task_name.Trim().Length > 0)
             {
                 textBox1.Text = task_name;
                 monthCalendar1.SetDate(DateTime.Parse(date));
