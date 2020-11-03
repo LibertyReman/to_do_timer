@@ -34,5 +34,17 @@ namespace to_do_timer.Properties {
                 this["StartFormPosition"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool TopMostSetting {
+            get {
+                return ((bool)(this["TopMostSetting"]));
+            }
+            set {
+                this["TopMostSetting"] = value;
+            }
+        }
     }
 }

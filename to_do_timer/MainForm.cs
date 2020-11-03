@@ -16,6 +16,9 @@ namespace to_do_timer
         {
             InitializeComponent();
 
+            //ウィンドウフロート設定
+            this.TopMost = Properties.Settings.Default.TopMostSetting;
+
             //ユーザが列や行のサイズを変更できないようにする
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;

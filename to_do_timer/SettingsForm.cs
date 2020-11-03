@@ -15,6 +15,19 @@ namespace to_do_timer
         public SettingsForm()
         {
             InitializeComponent();
+
+            //ウィンドウフロート設定
+            this.TopMost = Properties.Settings.Default.TopMostSetting;
+
+            //チェックボックスの初期値を設定
+            checkBox1.Checked = Properties.Settings.Default.TopMostSetting;
+        }
+
+        private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //TopMostの設定を保存
+            Properties.Settings.Default.TopMostSetting = checkBox1.Checked;
+            Properties.Settings.Default.Save();
         }
     }
 }

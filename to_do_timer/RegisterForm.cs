@@ -16,6 +16,9 @@ namespace to_do_timer
         {
             InitializeComponent();
 
+            //ウィンドウフロート設定
+            this.TopMost = Properties.Settings.Default.TopMostSetting;
+
             //ファイル読み込み
             string[] read_lines = System.IO.File.ReadAllLines("task.csv", Encoding.GetEncoding("shift_jis"));
 
