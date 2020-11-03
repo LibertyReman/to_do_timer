@@ -101,5 +101,23 @@ namespace to_do_timer
                 this.OnLoad(e);
             }
         }
+
+        //右クリックしたら設定メニューを表示
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                ContextMenu m = new ContextMenu();
+                m.MenuItems.Add("設定", this.contextMenu_click);
+                m.Show(dataGridView1, new Point(e.X, e.Y));
+            }
+        }
+
+        //設定メニューがクリックされたら設定フォームを表示
+        private void contextMenu_click(object sender, EventArgs e)
+        {
+            var f = new SettingsForm();
+            f.ShowDialog();
+        }
     }
 }
