@@ -19,22 +19,28 @@ namespace to_do_timer
             //ファイル読み込み
             string[] read_lines = System.IO.File.ReadAllLines("task.csv", Encoding.GetEncoding("shift_jis"));
 
-            //選択されたタスクを削除
-            int i = 0;
-            foreach (string line in read_lines)
+            //タスク編集
+            if(task_name.Trim().Length > 0)
             {
-                if (line.Contains(task_name))
-                    read_lines = read_lines.Where((source, index) => index != i).ToArray();
-                i++;
-            }
-            System.IO.File.WriteAllLines("task.csv",read_lines, Encoding.GetEncoding("shift_jis"));
-
-            //タスク編集の場合はテキストボックスとカレンダーに値を代入
-            if (task_name.Trim().Length > 0)
-            {
+                //選択されたタスクを削除
+                int i = 0;
+                foreach (string line in read_lines)
+                {
+                    string[] row = line.Split(',');
+                    if (row[0].Contains(task_name) && row[1].Contains(date))
+                    {
+                        read_lines = read_lines.Where((source, index) => index != i).ToArray();
+                        //foreach文を抜ける
+                        break;
+                    }
+                    i++;
+                }
+                System.IO.File.WriteAllLines("task.csv", read_lines, Encoding.GetEncoding("shift_jis"));
+                //テキストボックスとカレンダーに値を代入
                 textBox1.Text = task_name;
                 monthCalendar1.SetDate(DateTime.Parse(date));
             }
+
         }
 
         private void RegisterForm_FormClosing(object sender, FormClosingEventArgs e)

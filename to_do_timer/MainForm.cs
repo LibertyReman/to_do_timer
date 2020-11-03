@@ -40,7 +40,6 @@ namespace to_do_timer
             //ファイル読み込み
             string[] read_lines = System.IO.File.ReadAllLines("task.csv", Encoding.GetEncoding("shift_jis"));
 
-
             //タスク表示
             DateTime today = DateTime.Today;
             foreach (string line in read_lines)
@@ -59,6 +58,10 @@ namespace to_do_timer
             dataGridView1.Sort(dataGridView1.Columns[4], ListSortDirection.Ascending);
             for (int count = 0; count < dataGridView1.Rows.Count; count++)
                 dataGridView1.Rows[count].Cells[0].Value = count + 1;
+
+            //タスクは最大10個まで登録できるようにする
+            for (int count = dataGridView1.Rows.Count + 1; count <= 10; count++)
+                dataGridView1.Rows.Add(count, "", "", "");
 
         }
 
