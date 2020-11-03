@@ -51,9 +51,9 @@ namespace to_do_timer
                     DateTime due_date = DateTime.Parse(row[1]);
                     double limit = (due_date - today).TotalDays;
                     dataGridView1.Rows.Add("", row[0], row[1], row[1].Remove(0, 5), limit);
-                    if (5 < limit && limit < 15)
+                    if (7 < limit && limit < 15)
                         dataGridView1[4, dataGridView1.Rows.Count -1].Style.BackColor = Color.Yellow;
-                    else if (0 < limit && limit < 6)
+                    else if (0 < limit && limit < 8)
                         dataGridView1[4, dataGridView1.Rows.Count -1].Style.BackColor = Color.Red;
                     else if (limit < 1)
                         dataGridView1.Rows[dataGridView1.Rows.Count -1].DefaultCellStyle.BackColor = Color.LightGray;
