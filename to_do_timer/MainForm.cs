@@ -71,6 +71,13 @@ namespace to_do_timer
                 dataGridView1.Rows.Add(count, "", "", "");
         }
 
+        //フォームが表示された後に一度だけ呼ばれる
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            //セル未選択状態にする
+            dataGridView1.CurrentCell = null;
+        }
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             //フォームの座標を保存
