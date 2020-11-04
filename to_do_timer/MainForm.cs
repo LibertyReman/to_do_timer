@@ -30,6 +30,10 @@ namespace to_do_timer
             dataGridView1.ScrollBars = ScrollBars.Vertical;
             //セル選択を行選択として設定
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            //縦方向にだけフォームサイズ変更できるようにする
+            this.MinimumSize = new Size(320, 180);
+            this.MaximumSize = new Size(320, 265);
         }
 
 
@@ -69,8 +73,8 @@ namespace to_do_timer
             for (int count = 0; count < dataGridView1.Rows.Count; count++)
                 dataGridView1.Rows[count].Cells[0].Value = count + 1;
 
-            //タスクは最大10個まで登録できるようにする
-            for (int count = dataGridView1.Rows.Count + 1; count <= 10; count++)
+            //タスクは最大20個まで登録できるようにする
+            for (int count = dataGridView1.Rows.Count + 1; count <= 20; count++)
                 dataGridView1.Rows.Add(count, "", "", "");
         }
 
