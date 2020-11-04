@@ -83,6 +83,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegisterForm";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Register Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterForm_FormClosing);
