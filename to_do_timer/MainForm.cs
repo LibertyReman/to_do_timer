@@ -12,6 +12,8 @@ namespace to_do_timer
 {
     public partial class MainForm : Form
     {
+        bool initialized = false;
+
         public MainForm()
         {
             InitializeComponent();
@@ -34,13 +36,20 @@ namespace to_do_timer
             //縦方向にだけフォームサイズ変更できるようにする
             this.MinimumSize = new Size(320, 180);
             this.MaximumSize = new Size(320, 265);
+
+            initialized = true;
         }
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
             //前回フォームを閉じたときの座標にフォームを表示
-            this.Location = Properties.Settings.Default.StartFormPosition;
+            if (initialized)
+            {
+                this.Location = Properties.Settings.Default.StartFormPosition;
+                initialized = false;
+            }
+
             // データグリッドビューの行を初期化 ※リロード用
             dataGridView1.Rows.Clear();
 
