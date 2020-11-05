@@ -58,6 +58,7 @@
             this.ClientSize = new System.Drawing.Size(163, 112);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SettingsForm";
