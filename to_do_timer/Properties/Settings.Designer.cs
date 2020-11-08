@@ -46,5 +46,17 @@ namespace to_do_timer.Properties {
                 this["TopMostSetting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("180")]
+        public int FormHeightSetting {
+            get {
+                return ((int)(this["FormHeightSetting"]));
+            }
+            set {
+                this["FormHeightSetting"] = value;
+            }
+        }
     }
 }

@@ -20,6 +20,8 @@ namespace to_do_timer
 
             //ウィンドウフロート設定
             this.TopMost = Properties.Settings.Default.TopMostSetting;
+            //ウィンドウ高さ設定
+            this.Height = Properties.Settings.Default.FormHeightSetting;
 
             //ユーザが列や行のサイズを変更できないようにする
             dataGridView1.AllowUserToResizeColumns = false;
@@ -98,7 +100,10 @@ namespace to_do_timer
         {
             //フォームの座標を保存
             Properties.Settings.Default.StartFormPosition = this.Location;
+            //ウィンドウ高さを保存
+            Properties.Settings.Default.FormHeightSetting = this.Height;
             Properties.Settings.Default.Save();
+
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
