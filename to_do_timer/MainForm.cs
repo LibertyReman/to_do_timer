@@ -140,5 +140,11 @@ namespace to_do_timer
             var f = new SettingsForm();
             f.ShowDialog();
         }
+
+        //セルクリックしてスクロールしたときに文字が重ならないように修正
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Selected = false;
+        }
     }
 }

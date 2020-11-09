@@ -78,6 +78,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(308, 148);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // Number
@@ -86,6 +87,7 @@
             this.Number.DefaultCellStyle = dataGridViewCellStyle2;
             this.Number.HeaderText = "No.";
             this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
             this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Number.Width = 30;
             // 
@@ -93,6 +95,7 @@
             // 
             this.TaskName.HeaderText = "Task Name";
             this.TaskName.Name = "TaskName";
+            this.TaskName.ReadOnly = true;
             this.TaskName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.TaskName.Width = 172;
             // 
@@ -100,6 +103,7 @@
             // 
             this.FullDate.HeaderText = "FullDate";
             this.FullDate.Name = "FullDate";
+            this.FullDate.ReadOnly = true;
             this.FullDate.Visible = false;
             // 
             // Date
@@ -108,6 +112,7 @@
             this.Date.DefaultCellStyle = dataGridViewCellStyle3;
             this.Date.HeaderText = "Date";
             this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
             this.Date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Date.Width = 50;
             // 
@@ -115,6 +120,7 @@
             // 
             this.Limit.HeaderText = "Limit";
             this.Limit.Name = "Limit";
+            this.Limit.ReadOnly = true;
             this.Limit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Limit.Width = 40;
             // 
