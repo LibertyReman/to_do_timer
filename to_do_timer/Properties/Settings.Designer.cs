@@ -58,5 +58,17 @@ namespace to_do_timer.Properties {
                 this["FormHeightSetting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MinimizeBoxSetting {
+            get {
+                return ((bool)(this["MinimizeBoxSetting"]));
+            }
+            set {
+                this["MinimizeBoxSetting"] = value;
+            }
+        }
     }
 }

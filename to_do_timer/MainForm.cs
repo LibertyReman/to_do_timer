@@ -20,6 +20,8 @@ namespace to_do_timer
 
             //ウィンドウフロート設定
             this.TopMost = Properties.Settings.Default.TopMostSetting;
+            //最小化表示設定
+            this.MinimizeBox = Properties.Settings.Default.MinimizeBoxSetting;
             //ウィンドウ高さ設定
             this.Height = Properties.Settings.Default.FormHeightSetting;
 

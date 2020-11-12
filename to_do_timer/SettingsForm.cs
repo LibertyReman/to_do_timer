@@ -21,12 +21,15 @@ namespace to_do_timer
 
             //チェックボックスの初期値を設定
             checkBox1.Checked = Properties.Settings.Default.TopMostSetting;
+            checkBox2.Checked = Properties.Settings.Default.MinimizeBoxSetting;
         }
 
         private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             //TopMostの設定を保存
             Properties.Settings.Default.TopMostSetting = checkBox1.Checked;
+            //最小化の設定を保存
+            Properties.Settings.Default.MinimizeBoxSetting = checkBox2.Checked;
             Properties.Settings.Default.Save();
         }
     }
