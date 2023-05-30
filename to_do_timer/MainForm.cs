@@ -99,7 +99,7 @@ namespace to_do_timer
 
             //縦方向にだけフォームサイズ変更できるようにする  微調整：dataGridView1.Columns["Date"].Width * 2 + 2
             this.MinimumSize = new Size(dataGridView1.Columns["Number"].Width + dataGridView1.Columns["TaskName"].Width + dataGridView1.Columns["Date"].Width * 2 + 2, dataGridView1.Rows[1].Height * 4);
-            this.MaximumSize = new Size(dataGridView1.Columns["Number"].Width + dataGridView1.Columns["TaskName"].Width + dataGridView1.Columns["Date"].Width * 2 + 2, dataGridView1.Rows[1].Height * 11);
+            this.MaximumSize = new Size(dataGridView1.Columns["Number"].Width + dataGridView1.Columns["TaskName"].Width + dataGridView1.Columns["Date"].Width * 2 + 2, dataGridView1.Rows[1].Height * 13);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
