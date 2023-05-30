@@ -36,10 +36,10 @@ namespace to_do_timer
             dataGridView1.ScrollBars = ScrollBars.Vertical;
             //セル選択を行選択として設定
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-            //縦方向にだけフォームサイズ変更できるようにする
-            this.MinimumSize = new Size(320, 180);
-            this.MaximumSize = new Size(320, 265);
+            //ヘッダーとすべてのセルの内容に合わせて、列の幅を自動調整する
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            //ヘッダーとすべてのセルの内容に合わせて、行の高さを自動調整する
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             initialized = true;
         }
@@ -96,6 +96,10 @@ namespace to_do_timer
         {
             //セル未選択状態にする
             dataGridView1.CurrentCell = null;
+
+            //縦方向にだけフォームサイズ変更できるようにする  微調整：dataGridView1.Columns["Date"].Width * 2 + 2
+            this.MinimumSize = new Size(dataGridView1.Columns["Number"].Width + dataGridView1.Columns["TaskName"].Width + dataGridView1.Columns["Date"].Width * 2 + 2, dataGridView1.Rows[1].Height * 4);
+            this.MaximumSize = new Size(dataGridView1.Columns["Number"].Width + dataGridView1.Columns["TaskName"].Width + dataGridView1.Columns["Date"].Width * 2 + 2, dataGridView1.Rows[1].Height * 11);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
