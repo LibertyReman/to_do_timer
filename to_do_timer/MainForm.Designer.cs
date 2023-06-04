@@ -129,7 +129,7 @@ namespace to_do_timer
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 86400000;
+            this.timer1.Interval = 43200000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MainForm
