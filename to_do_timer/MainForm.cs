@@ -152,5 +152,11 @@ namespace to_do_timer
         {
             dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Selected = false;
         }
+
+        // アプリ起動から24時間経ったら再起動し日付更新する
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }
