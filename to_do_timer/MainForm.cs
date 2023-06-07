@@ -13,6 +13,7 @@ namespace to_do_timer
     public partial class MainForm : Form
     {
         bool initialized = false;
+        int exeStartDay = 0;
 
         public MainForm()
         {
@@ -41,6 +42,7 @@ namespace to_do_timer
             //ヘッダーとすべてのセルの内容に合わせて、行の高さを自動調整する
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
+            exeStartDay = DateTime.Now.Day;
             initialized = true;
         }
 
@@ -153,10 +155,13 @@ namespace to_do_timer
             dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Selected = false;
         }
 
-        // アプリ起動から24時間経ったら再起動し日付更新する
+        // 日付が変わったら残り日数を更新する
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Application.Restart();
+            if (exeStartDay != DateTime.Now.Day)
+            {
+                Application.Restart();
+            }
         }
     }
 }
